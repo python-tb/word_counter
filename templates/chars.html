@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculate characters</title>
+</head>
+<body>
+  
+    <h2>Convert the text here to following buttons:</h2>
+
+    <form action="chars" method="post">
+        {% csrf_token %}
+
+        <div>
+            <label for="">Enter the text here:</label> <br>
+            <textarea name="text" id="" cols="100" rows="7"></textarea>
+        </div>
+        <input type="submit" value="calculate characters"> <br>
+    </form>
+        
+    {% if char_count %}
+
+    <h4>results:</h4>
+    <strong>characters count:</strong> {{char_count}}
+    
+    {% endif %}
+
+        <hr>
+        <h4>Other Action given below:</h4>
+        <a href="/"><button>calculate words</button></a>
+        <a href="/consonants"><button>calculate consonants</button></a>
+        <a href="/vowels"><button>calculate vowels</button></a>
+        <a href="/upper"><button>calculate uppercase</button></a>
+        <a href="/lower"><button>calculate lowercase</button></a>
+       
+    
+    
+</body>
+</html>
